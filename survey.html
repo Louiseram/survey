@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Survey</title>
+
+<style>
+
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1D7874;
+      color: #fff;
+      margin: 0;
+      height: 100vh;
+     
+      align-items: center;
+      justify-content: center;
+    }
+
+
+
+ h1 {
+      color: #F4C095;
+      text-align: center;
+font-size: 35px;
+    }
+
+    button {
+      padding: 4px 9px;
+      margin: 2px;
+      font-size: 25px;
+      cursor: pointer;
+      background-color: #f5c518;
+      color: #1e2b78;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d4aa00;
+}   
+
+button {
+      padding: 7px 15px;
+      margin: 2px;
+      font-size: 25px;
+      cursor: pointer;
+      background-color: #F4C095;
+      color: #1e5751;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d4aa00;
+      font-size: 30px;
+}   
+
+
+ .q-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px;
+      border: 2px solid #123b37;
+      border-radius: 10px;
+      background-color: #4F6367;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+
+</style>
+
+</head>
+<body>
+    <h1 class="glow">Transportation Survey</h1>
+<br>
+<br>
+
+<div class="q-container">
+    <ol>
+        <li>
+            <label for="q1">What are the advantages of using public transportation?</label>
+<br>
+            <input type="text" id="q1" name="q1">
+        </li>
+<br>
+        <li>
+            <label for="q2">How does transportation impact the environment?</label>
+<br>
+            <input type="text" id="q2" name="q2">
+        </li>
+<br>
+        <li>
+            <label for="q3">What are some innovative transportation technologies?</label>
+<br>
+            <input type="text" id="q3" name="q3">
+        </li>
+<br>
+        <li>
+            <label for="q4">What role does transportation play in urban planning?</label>
+<br>
+            <input type="text" id="q4" name="q4">
+        </li>
+<br>
+        <li>
+            <label for="q5">How can transportation systems be made more accessible?</label>
+<br>
+            <input type="text" id="q5" name="q5">
+        </li>
+<br>
+        <li>
+            <label for="q6">What are the challenges facing the future of transportation?</label>
+<br>
+            <input type="text" id="q6" name="q6">
+        </li>
+<br>
+        <li>
+            <label for="q7">What are the benefits and drawbacks of electric vehicles?</label>
+<br>
+            <input type="text" id="q7" name="q7">
+        </li>
+<br>
+        <li>
+            <label for="q8">How does transportation infrastructure differ around the world?</label>
+<br>
+            <input type="text" id="q8" name="q8">
+        </li>
+<br>
+        <li>
+            <label for="q9">What are some historical developments in transportation?</label>
+<br>
+            <input type="text" id="q9" name="q9">
+        </li>
+<br>
+        <li>
+            <label for="q10">How does transportation affect economic development?</label>
+<br>
+            <input type="text" id="q10" name="q10">
+        </li>
+    </ol>
+</div>
+<br>
+
+<center>
+    <button onclick="saveSurvey()">Submit</button>
+</center>
+
+    <script>
+        function saveSurvey() {
+            var responses = [];
+            for (var i = 1; i <= 10; i++) {
+                var response = document.getElementById("q" + i).value;
+                responses.push(response);
+            }
+            localStorage.setItem("transportation_survey_responses", JSON.stringify(responses));
+            alert("Survey responses saved!");
+        }
+    </script>
+</body>
+</html>
